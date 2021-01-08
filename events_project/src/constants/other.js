@@ -14,6 +14,7 @@ export const events = [
         logo        : 'https://media.istockphoto.com/photos/nicelooking-attractive-gorgeous-glamorous-elegant-stylish-cheerful-picture-id1165055006?k=6&m=1165055006&s=612x612&w=0&h=X_d75QPcjQ0Zx-X2tTD4npQOIjD6lKXdDPqxJHuovhc=',
         description : 'ergwergwer',
         date        : moment(),
+        link:'https://www.npmjs.com/search?q=QR',
         location    : {
             lat : 49.45012649,
             lon : -329.47622538
@@ -25,6 +26,7 @@ export const events = [
         logo        : '',
         description : 'ergwergwer',
         date        : moment(),
+        link:'https://www.npmjs.com/search?q=QR',
         location    : {
             lat : 51.45012649,
             lon : -329.47622538
@@ -36,6 +38,7 @@ export const events = [
         logo        : 'https://media.istockphoto.com/photos/nicelooking-attractive-gorgeous-glamorous-elegant-stylish-cheerful-picture-id1165055006?k=6&m=1165055006&s=612x612&w=0&h=X_d75QPcjQ0Zx-X2tTD4npQOIjD6lKXdDPqxJHuovhc=',
         description : 'ergwergwer',
         date        : moment(),
+        link:'https://www.npmjs.com/search?q=QR',
         location    : {
             lat : 50.45012649,
             lon : -328.47622538
@@ -47,6 +50,7 @@ export const events = [
         logo        : '',
         description : 'ergwergwer',
         date        : moment(),
+        link:'',
         location    : {
             lat : 50.45012649,
             lon : -330.47622538

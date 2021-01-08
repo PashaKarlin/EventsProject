@@ -25,8 +25,16 @@
     height    : 100%;
 }
 
+.qrWrapper {
+    border-radius: 8px;
+    overflow     : hidden;
+    height       : 200px;
+    width        : 200px;
+}
+
 
 .eventInfo {
+    flex          : 1;
     margin-left   : 20px;
     display       : flex;
     flex-direction: column;
