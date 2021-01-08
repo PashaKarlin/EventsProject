@@ -1,70 +1,94 @@
-
-.header_block{
-  width: 100%;
-  height: 100vh;
-  background: url("../../images/backgroundimage.png") no-repeat center;
-  background-size: cover;
+.header_block {
+  width   : 100%;
+  height  : 100vh;
+  position: relative;
 }
-.header_content{
-    display: inline-block;
-    justify-content: center;
-    text-align: center;
-    font-size: 100px;
-    font-family: sans-serif;
-    font-weight: bolder;
-    color: #D63642;
-    padding: 1.3em 0 0 0 ;
+
+.bg-image {
+  object-fit: cover;
+  height    : 100%;
+  width     : 100%;
+}
+
+.header_content {
+  top            : 0;
+  display        : flex;
+  position       : absolute;
+  z-index        : 100;
+  justify-content: center;
+  align-items    : center;
+  text-align     : center;
+  font-size      : 100px;
+  font-family    : sans-serif;
+  font-weight    : bolder;
+  color          : #D63642;
+  padding        : 1.3em 0 0 0;
+  height         : 100%;
+  width          : 100%;
+  box-shadow     :
+    inset 0 80px 60px -60px #27292c,
+    inset 0 -80px 50px 20px #27292c;
 }
 
 
 @font-face {
-    font-family: "SF Pro Display"; 
-    src: url("../../fonts/SFProDisplay.ttf") format("truetype"); 
-    font-style: normal; 
-    font-weight: normal;  
-} 
+  font-family: "SF Pro Display";
+  src        : url("../../fonts/SFProDisplay.ttf") format("truetype");
+  font-style : normal;
+  font-weight: normal;
+}
 
 .search {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    width: 40em;
-    height: 40px;
-    margin: 0 auto;
-    border-radius: 20px;
-    opacity: 0.5;
-    outline: none;
-    margin-top: 1em;
-  }
-::-webkit-input-placeholder {
-    text-align:center;
-    }
-:-moz-placeholder { /* Firefox 18- */
-       text-align:center;  
-    }
-::-moz-placeholder {  /* Firefox 19+ */
-       text-align:center;  
-    }
-:-ms-input-placeholder {  
-       text-align:center; 
-    }
-:focus::-webkit-input-placeholder {
-        color: transparent
-      }
-:focus::-moz-placeholder {
-        color: transparent
-      }
-:focus:-moz-placeholder {
-        color: transparent
-      }
-:focus:-ms-input-placeholder {
-        color: transparent
-      }
+  text-align   : center;
+  font-size    : 14px;
+  font-weight  : 400;
+  width        : 40em;
+  height       : 40px;
+  margin       : 0 auto;
+  border-radius: 20px;
+  opacity      : 0.5;
+  outline      : none;
+  margin-top   : 1em;
+}
 
-.logo{
-  width: 70px;
-  position:absolute;
-  top:10px;
-  left:10px;
-  
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
+:focus::-webkit-input-placeholder {
+  color: transparent
+}
+
+:focus::-moz-placeholder {
+  color: transparent
+}
+
+:focus:-moz-placeholder {
+  color: transparent
+}
+
+:focus:-ms-input-placeholder {
+  color: transparent
+}
+
+.logo {
+  width   : 70px;
+  position: absolute;
+  top     : 10px;
+  left    : 10px;
+
 }

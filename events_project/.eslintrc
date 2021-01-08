@@ -1,0 +1,20 @@
+{
+    "extends": "webbylab",
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "no-param-reassign": ["error", { "ignorePropertyModificationsFor": ["draft"] } ],
+      "react/no-did-update-set-state": 0,
+      "react/no-did-mount-set-state": 0,
+      "no-useless-backreference": 0,
+      "react/prop-types":0,
+      "more/no-window": 0,
+      "react/jsx-closing-tag-location": 0,
+      "react/jsx-closing-bracket-location": 0,
+      "react/no-multi-comp": 0,
+      "linebreak-style": 0,
+      "func-style": 0
+    }
+}
