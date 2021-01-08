@@ -1,6 +1,6 @@
 import queryString from 'query-string';
 
-const apiUrl = 'sfdgmvdfsmvsdmlvmf';
+const apiUrl = 'http://192.168.26.1:4000/api';
 
 export default class ApiClient {
     constructor() {
@@ -59,21 +59,18 @@ export default class ApiClient {
             {
                 method,
                 headers : {
-                    'Content-Type'  : 'application/json',
-                    'Cache-Control' : 'no-cache',
-                    'pragma'        : 'no-cache'
+                    'Content-Type'  : 'application/json'
                 },
-                withCredentials : true,
-                crossDomain     : false,
+                crossDomain     : true,
                 body            : method !== 'GET' ? JSON.stringify({ data: body }) : undefined
             }
         );
-
+       
         const json = await response.json();
-
+        
         if (json.status === 0) throw json.error;
 
-        return json.data;
+        return json;
     }
 
     setToken(token) {

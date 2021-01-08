@@ -2,7 +2,7 @@ import Base from './Base.js';
 
 class Events extends Base {
     getEvents() {
-        return this.apiClient.get('events');
+        return this.apiClient.get('/events');
     }
 
     addEvent(payload) {

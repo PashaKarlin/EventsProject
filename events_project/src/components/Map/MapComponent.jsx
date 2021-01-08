@@ -10,7 +10,7 @@ const MapComponent = ({
 }) => {
     const mapRef = useRef();
     const groupRef = useRef();
-    const position = [ 50.45012649, -329.47622538 ];
+    const position = [50.450306273959754, 30.52415672653458];
 
     const logos = {
         eat   : iconEat,
@@ -22,6 +22,7 @@ const MapComponent = ({
     useEffect(() => {
         const map = mapRef.current.leafletElement;
         const group = groupRef.current;
+        
 
         if (group) map.fitBounds(group.leafletElement.getBounds());
     });
@@ -39,6 +40,7 @@ const MapComponent = ({
 
     const changeFilterType = key => () => {
         setFilterType(key);
+        whenMapReady()
     };
 
     const whenMapReady = () => {
@@ -64,22 +66,29 @@ const MapComponent = ({
                 <FeatureGroup
                     ref={groupRef}
                 >
+                    
                     <Marker
                         icon={iconPerson}
                         position={position}
                     >
-                        <Popup>Тут будет информация<br />о событии</Popup>
+                        <Popup>Ты здесь</Popup>
+                        
                     </Marker>
+                    
                     {events.filter(filterFunc).map(item => {
                         return (
-                            <Marker
-                                position={[ item.location.lat, item.location.lon ]}
-                                icon = {logos[item.type]}
-                            >
-                                <Popup>Тут будет информация<br />о событии</Popup>
-                            </Marker>
+                            
+                                <Marker
+                                    position={[ item.location.lat, item.location.lon ]}
+                                    icon = {logos[item.type]}
+                                >
+                                    <Popup>{item.name}<br /><a target = '_blank' href = {item.link}>{item.link}</a></Popup>
+                                </Marker>
+                            
                         );
                     })}
+                   
+                    
                 </FeatureGroup>
 
             </Map>

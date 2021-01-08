@@ -21,7 +21,7 @@ function EventCard({ item }) {
                 <p><b>Description:</b> {item.description}</p>
                 <p><b>Date:</b> {item.date.format('DD.MM.YYYY')}</p>
                 <p><b>Time:</b> {item.date.format('HH:mm')}</p>
-                {item.link && <p><b>Link:</b> <a href = {item.link}>{item.link}</a></p>}
+                {item.link && <p><b>Link:</b> <a target = '_blank' href = {item.link}>{item.link}</a></p>}
             </div>
             {item.link &&  
             <div className='qrWrapper'>

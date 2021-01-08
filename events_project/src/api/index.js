@@ -6,7 +6,7 @@ function makeApiList() {
 
     return {
         apiClient : api,
-        sessions  : new EventsAPI({ apiClient: api })
+        events  : new EventsAPI({ apiClient: api })
     };
 }
 

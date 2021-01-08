@@ -1,16 +1,35 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 // import { BrowserRouter, Route } from 'react-router-dom';
 import './App.scss';
 import Switch from 'react-switch';
 import Header from './components/Header/Header.jsx';
 import MapComponent from './components/Map/MapComponent.jsx';
 import EventCard from './components/EventCard/EventCard.jsx';
+import { getEventsList } from './actions/Events'
 
 function App() {
-    const [ mode, setMode ] = useState(false);
-    const [ filterType, setFilterType ] = useState(false);
+    const [mode, setMode] = useState(false);
+    const [filterType, setFilterType] = useState(false);
     const events = useSelector(state => state.events.events);
+    const dispatch = useDispatch()
+
+    // useEffect(async ()=>{
+
+    //     getEventsList({
+    //         dispatch
+    //     })
+    //     console.log('abc')
+    // })
+
+    useEffect(() => {
+        const loadSpots = async () => {
+            getEventsList({
+                dispatch
+            })
+        };
+        loadSpots();
+    }, [dispatch]);
 
     const changeState = () => {
         setMode(!mode);
@@ -85,7 +104,7 @@ function App() {
                             onClick={changeFilterType(false)}
                         >Clear filter</button>
                     </div>
-                    <div className = 'eventsBlock'>
+                    <div className='eventsBlock'>
                         {events.filter(filterFunc).map(renderEvent)}
                     </div>
                 </div>
