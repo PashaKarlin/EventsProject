@@ -1,6 +1,6 @@
 import queryString from 'query-string';
 
-const apiUrl = 'http://192.168.26.1:5000/v1/api/';
+const apiUrl = 'http://3.22.214.77/v1/api/';
 
 export default class ApiClient {
     constructor() {
