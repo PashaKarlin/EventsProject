@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 // import { BrowserRouter, Route } from 'react-router-dom';
 import './App.scss';
 import Switch from 'react-switch';
-import Header from './components/Header/Header';
-import MapComponent from './components/Map/MapComponent';
-import EventCard from './components/EventCard/EventCard';
-import { events } from './constants/other';
+import Header from './components/Header/Header.jsx';
+import MapComponent from './components/Map/MapComponent.jsx';
+import EventCard from './components/EventCard/EventCard.jsx';
 
 function App() {
-    const [ state, setState ] = useState(false);
+    const [ mode, setMode ] = useState(false);
     const [ filterType, setFilterType ] = useState(false);
-
+    const events = useSelector(state => state.events.events);
 
     const changeState = () => {
-        setState(!state);
+        setMode(!mode);
     };
 
     const renderEvent = (item) => {
@@ -43,10 +43,10 @@ function App() {
         <div className='App'>
             <Header />
             <div className='switchWrapper'>
-                <p className={`labelText${!state ? ' checkedLabel' : ''}`}>MAP</p>
+                <p className={`labelText${!mode ? ' checkedLabel' : ''}`}>MAP</p>
                 <Switch
                     onChange={changeState}
-                    checked={state}
+                    checked={mode}
                     onColor='#dc3545'
                     offColor='#dc3545'
                     uncheckedIcon={false}
@@ -54,9 +54,9 @@ function App() {
                     offHandleColor='#27292c'
                     onHandleColor='#27292c'
                 />
-                <p className={`labelText${state ? ' checkedLabel' : ''}`}>EVENTS</p>
+                <p className={`labelText${mode ? ' checkedLabel' : ''}`}>EVENTS</p>
             </div>
-            {!state ?
+            {!mode ?
                 <MapComponent
                     events={events}
                     filterType={filterType}

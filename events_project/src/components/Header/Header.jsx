@@ -5,7 +5,7 @@ import backgroundimage from '../../images/backgroundimage.png';
 const Header = () => {
     return (
         <div className='header_block'>
-            <img src = {backgroundimage} className = 'bg-image' />
+            <img src = {backgroundimage} className = 'bg-image' alt = 'bg' />
             <div className='header_content'>
                 <p>Hang out <br /> with us</p>
             </div>
